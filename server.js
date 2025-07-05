@@ -50,7 +50,7 @@ const challenges = {}; // { userId: challenge }
 // --- 4. WebAuthn Configuration ---
 const rpName = 'DRONGO AUTONOMOUS';
 // The rpID should be the domain of your front-end, WITHOUT the protocol.
-const rpID = 'drongo-login.onrender.com'; // Example: your-app-name.onrender.com
+const rpID = 'drongo-auth-server.onrender.com'; // Example: your-app-name.onrender.com
 // The origin is the full URL where your front-end is hosted.
 const origin = `https://${rpID}`;
 
