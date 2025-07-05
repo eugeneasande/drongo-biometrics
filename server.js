@@ -84,7 +84,7 @@ app.post('/verify-registration', async (req, res) => {
     const expectedChallenge = challenges[user.id];
     try {
         const verification = await verifyRegistrationResponse({
-            response, expectedChallenge, expectedOrigin: allowedOrigins, expectedRPID: rpID,
+            response, expectedChallenge, expectedOrigin: 'https://eugeneasande.github.io', expectedRPID: rpID,
         });
         const { verified, registrationInfo } = verification;
         if (verified && registrationInfo) {
@@ -129,7 +129,7 @@ app.post('/verify-authentication', async (req, res) => {
     if (!authenticator) return res.status(400).json({ error: 'Authenticator not recognized.' });
     try {
         const verification = await verifyAuthenticationResponse({
-            response, expectedChallenge, expectedOrigin: allowedOrigins, expectedRPID: rpID, authenticator,
+            response, expectedChallenge, expectedOrigin: 'https://eugeneasande.github.io', expectedRPID: rpID, authenticator,
         });
         const { verified, authenticationInfo } = verification;
         if (verified) {
